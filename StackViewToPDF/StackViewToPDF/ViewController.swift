@@ -22,8 +22,10 @@ class ViewController: UIViewController {
 			fatalError("PDFSheet failed to create TaskSheet")
 		}
 
-		// note: if we don't force this,
-		//	the view layout will not be completed
+		// note: At this point, the view has not been added to the
+		// view hierarchy. If you're going to do something with it,
+		// such as output it to a png or pdf, for example, you need
+		// to tell auto-layout to do its work
 		v.setNeedsLayout()
 		v.layoutIfNeeded()
 		
